@@ -26,8 +26,7 @@ function dateMaker(x) {
 // Function to match yesterday with a sheet and column
 function findYesterdaysColumn() {
   // Assigns spreadsheet to variable and sets it to active
-  var ss = SpreadsheetApp.openById("SS_URL");
-  SpreadsheetApp.setActiveSpreadsheet(ss);
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
   // Grabs yesterday's month name
   var month = dateMaker('monthName');
   // Sets active sheet to yesterday's month
@@ -50,8 +49,7 @@ function findYesterdaysColumn() {
 // Function to match a coach's name with a row
 function findCoachRow(id) {
   // Assigns spreadsheet to variable and sets it to active
-  var ss = SpreadsheetApp.openById("SS_URL");
-  SpreadsheetApp.setActiveSpreadsheet(ss);
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
   // Grabs yesterday's month name
   var month = dateMaker('monthName');
   // Sets active sheet to yesterday's month
@@ -71,8 +69,8 @@ function findCoachRow(id) {
 // Returns an auth_token based on an user's email and password for Echo
 function echoAuth() {
   var payload = {
-      'email' : scriptProperties.getProperty('ECHO_EMAIL'),
-      'password' : scriptProperties.getProperty('ECHO_PASSWORD')
+      'email' : 'f',
+      'password': 'g' 
   };
    var options = {
    'method' : 'post',
@@ -102,8 +100,7 @@ function echoAuth() {
 
 function nextCoachRow() {
   // Assigns spreadsheet to variable and sets it to active
-  var ss = SpreadsheetApp.openById("SS_URL");
-  SpreadsheetApp.setActiveSpreadsheet(ss);
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
   // Grabs yesterday's month name
   var month = dateMaker('monthName');
   // Sets active sheet to yesterday's month
@@ -119,8 +116,7 @@ function nextCoachRow() {
 // Primary function to tally the spreadsheet based on whether or not a coach took one chat or more yesterday.
 function echoImport() {
   // Assigns spreadsheet to variable and sets it to active
-  var ss = SpreadsheetApp.openById("SS_URL");
-  SpreadsheetApp.setActiveSpreadsheet(ss);
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
   // Grabs yesterday's month name
   var month = dateMaker('monthName');
   // Sets active sheet to yesterday's month
