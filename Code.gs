@@ -71,8 +71,8 @@ function findCoachRow(id) {
 // Returns an auth_token based on an user's email and password for Echo
 function echoAuth() {
   var payload = {
-     'email' : 'ECHO_EMAIL',
-     'password' : 'ECHO_PASSWORD'
+      'email' : scriptProperties.getProperty('ECHO_EMAIL'),
+      'password' : scriptProperties.getProperty('ECHO_PASSWORD')
   };
    var options = {
    'method' : 'post',
