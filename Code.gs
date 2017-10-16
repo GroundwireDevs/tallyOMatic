@@ -26,7 +26,7 @@ function dateMaker(x) {
 // Function to match yesterday with a sheet and column
 function findYesterdaysColumn() {
   // Assigns spreadsheet to variable and sets it to active
-  var ss = SpreadsheetApp.openById("***REMOVED***");
+  var ss = SpreadsheetApp.openById("SS_URL");
   SpreadsheetApp.setActiveSpreadsheet(ss);
   // Grabs yesterday's month name
   var month = dateMaker('monthName');
@@ -50,7 +50,7 @@ function findYesterdaysColumn() {
 // Function to match a coach's name with a row
 function findCoachRow(id) {
   // Assigns spreadsheet to variable and sets it to active
-  var ss = SpreadsheetApp.openById("***REMOVED***");
+  var ss = SpreadsheetApp.openById("SS_URL");
   SpreadsheetApp.setActiveSpreadsheet(ss);
   // Grabs yesterday's month name
   var month = dateMaker('monthName');
@@ -71,8 +71,8 @@ function findCoachRow(id) {
 // Returns an auth_token based on an user's email and password for Echo
 function echoAuth() {
   var payload = {
-     'email' : '***REMOVED***',
-     'password' : '***REMOVED***'
+     'email' : 'ECHO_EMAIL',
+     'password' : 'ECHO_PASSWORD'
   };
    var options = {
    'method' : 'post',
@@ -102,7 +102,7 @@ function echoAuth() {
 
 function nextCoachRow() {
   // Assigns spreadsheet to variable and sets it to active
-  var ss = SpreadsheetApp.openById("***REMOVED***");
+  var ss = SpreadsheetApp.openById("SS_URL");
   SpreadsheetApp.setActiveSpreadsheet(ss);
   // Grabs yesterday's month name
   var month = dateMaker('monthName');
@@ -119,7 +119,7 @@ function nextCoachRow() {
 // Primary function to tally the spreadsheet based on whether or not a coach took one chat or more yesterday.
 function echoImport() {
   // Assigns spreadsheet to variable and sets it to active
-  var ss = SpreadsheetApp.openById("***REMOVED***");
+  var ss = SpreadsheetApp.openById("SS_URL");
   SpreadsheetApp.setActiveSpreadsheet(ss);
   // Grabs yesterday's month name
   var month = dateMaker('monthName');
