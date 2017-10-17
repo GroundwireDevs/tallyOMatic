@@ -1,3 +1,6 @@
+// Gets Properties object
+var scriptProperties = PropertiesService.getScriptProperties();
+
 // Function that creates a date object for yesterday
 function subDaysFromDate(date,d){
   // d = number of day to subtract and date = start date
@@ -69,8 +72,8 @@ function findCoachRow(id) {
 // Returns an auth_token based on an user's email and password for Echo
 function echoAuth() {
   var payload = {
-      'email' : 'f',
-      'password': 'g' 
+      'email' : scriptProperties.getProperty('ECHO_EMAIL'),
+      'password': scriptProperties.getProperty('ECHO_PASSWORD') 
   };
    var options = {
    'method' : 'post',
