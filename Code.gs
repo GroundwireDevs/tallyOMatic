@@ -76,7 +76,7 @@ function echoAuth() {
       'password': scriptProperties.getProperty('ECHO_PASSWORD') 
   };
    var options = {
-   'method' : 'post',
+     'method' : 'post',
      'payload' : payload
  };
   var response = UrlFetchApp.fetch('https://groundwire.echoglobal.org/sessions.json', options);
