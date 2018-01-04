@@ -1,5 +1,6 @@
 // Gets Properties object
 var scriptProperties = PropertiesService.getScriptProperties();
+var daysAgo = 1; // How many days ago to get and record information from and to, respectively.
 
 // Function that creates a date object for yesterday
 function subDaysFromDate(date,d){
@@ -10,7 +11,7 @@ function subDaysFromDate(date,d){
 
 // Function to handle various date jobs, in this case to return date number, month name or month number, depending on the request
 function dateMaker(x) {
-  var yesterdayDate = subDaysFromDate(new Date(),1);
+  var yesterdayDate = subDaysFromDate(new Date(),daysAgo);
   var monthNumber = yesterdayDate.getMonth();
   var months = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
   var month = months[monthNumber];
@@ -133,7 +134,7 @@ function echoImport() {
   var todayMonthNumber = months[todayMonthNumberPre];
   var todayDateNumber = todayDate.getDate();
   var todayYear = todayDate.getFullYear();
-  var yesterdayDate = subDaysFromDate(new Date(),1);
+  var yesterdayDate = subDaysFromDate(new Date(),daysAgo);
   var yesterdayMonthNumberPre = yesterdayDate.getMonth();
   var yesterdayMonthNumber = months[yesterdayMonthNumberPre];
   var yesterdayDateNumber = yesterdayDate.getDate();
